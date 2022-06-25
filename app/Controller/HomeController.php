@@ -3,50 +3,40 @@
 namespace Adrian\Website\Semiva\Controller;
 
 use Adrian\Website\Semiva\App\View;
+use Adrian\Website\Semiva\Config\Database;
+use Adrian\Website\Semiva\Repository\SessionRepository;
+use Adrian\Website\Semiva\Repository\UserRepository;
+use Adrian\Website\Semiva\Service\SessionService;
 
 class HomeController
 {
 
-    function index(): void
-    {
-        $model = [
-            "title" => "Belajar PHP MVC",
-            "content" => "Selamat Belajar PHP MVC dari Programmer Zaman Now"
-        ];
+    private SessionService $sessionService;
 
-        View::render('Home/index', $model);
+    public function __construct()
+    {
+        $connection = Database::getConnection();
+        $sessionRepository = new SessionRepository($connection);
+        $userRepository = new UserRepository($connection);
+        $this->sessionService = new SessionService($sessionRepository, $userRepository);
     }
 
-    function hello(): void
+
+    function index()
     {
-        echo "HomeController.hello()";
-    }
-
-    function world(): void
-    {
-        echo "HomeController.world()";
-    }
-
-    function about(): void
-    {
-        echo "Author : Eko Kurniawan Khannedy";
-    }
-
-    function login(): void
-    {
-        $request = [
-            "username" => $_POST['username'],
-            "password" => $_POST['password']
-        ];
-
-        $user = [
-
-        ];
-
-        $response = [
-            "message" => "Login Sukses"
-        ];
-        // kirimkan response ke view
+        $user = $this->sessionService->current();
+        if ($user == null) {
+            View::render('Home/index', [
+                "title" => "PHP Login Management"
+            ]);
+        } else {
+            View::render('Home/dashboard', [
+                "title" => "Dashboard",
+                "user" => [
+                    "name" => $user->name
+                ]
+            ]);
+        }
     }
 
 }
