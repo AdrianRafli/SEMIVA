@@ -4,12 +4,12 @@ function getDatabaseConfig(): array {
     return [
         "database" => [
             "test" => [
-                "url" => "mysql:host=localhost:3306;dbname=semiva_login_test",
+                "url" => "mysql:host=localhost:3306;dbname=sekolahku",
                 "username" => "root",
                 "password" => "",
             ],
             "prod" => [
-                "url" => "mysql:host=localhost:3306;dbname=semiva_login",
+                "url" => "mysql:host=localhost:3306;dbname=sekolahku",
                 "username" => "root",
                 "password" => "",
             ]

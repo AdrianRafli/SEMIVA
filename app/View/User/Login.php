@@ -1,31 +1,29 @@
-<div class="container col-xl-10 col-xxl-8 px-4 py-5">
-
-    <?php if(isset($model['error'])) { ?>
-        <div class="row">
-            <div class="alert alert-danger" role="alert">
-                <?= $model['error'] ?>
+<div class="container">
+        <section class="login">
+            <div class="row justify-content-center align-items-center" style="height: 100vh;">
+                <div class="col-6 login-card shadow" style="padding: 80px 50px; background-color: #fff; border-radius: 20px;">
+                    <h1 class="text-center mb-5">LOGIN</h1>
+                    <?php if(isset($model['error'])) { ?>
+                        <div class="row">
+                            <div class="alert alert-danger" role="alert">
+                                <?= $model['error'] ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <form action="/users/login" method="POST">
+                        <div class="col mb-3">
+                            <input type="text" class="form-control" name="username" id="username"required>
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="col mb-4">
+                            <input type="password" class="form-control" name="password" id="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="col text-center mt-4">
+                            <button type="submit" class="btn btn-dark" name="login" style="width: 100%;">LOGIN</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-    <?php } ?>
-
-    <div class="row align-items-center g-lg-5 py-5">
-        <div class="col-lg-7 text-center text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 mb-3">Login</h1>
-            <p class="col-lg-10 fs-4">by <a target="_blank" href="https://www.programmerzamannow.com/">Programmer Zaman
-                    Now</a></p>
-        </div>
-        <div class="col-md-10 mx-auto col-lg-5">
-            <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/users/login">
-                <div class="form-floating mb-3">
-                    <input name="id" type="text" class="form-control" id="id" placeholder="id" value="<?= $_POST['id'] ?? '' ?>">
-                    <label for="id">Id</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input name="password" type="password" class="form-control" id="password" placeholder="password">
-                    <label for="password">Password</label>
-                </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign On</button>
-            </form>
-        </div>
+        </section>
     </div>
-</div>

@@ -3,7 +3,8 @@ CREATE DATABASE semiva_login;
 CREATE DATABASE semiva_login_test;
 
 CREATE TABLE users(
-    id VARCHAR(255) PRIMARY KEY ,
+    id INT(11) PRIMARY KEY ,
+    email VARCHAR(255) ,
     name VARCHAR(255) NOT NULL ,
     password VARCHAR(255) NOT NULL
 ) ENGINE InnoDB;

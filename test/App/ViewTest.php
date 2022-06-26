@@ -13,9 +13,9 @@ class ViewTest extends TestCase
         $this->expectOutputRegex('[Login]');
         $this->expectOutputRegex('[html]');
         $this->expectOutputRegex('[body]');
-        $this->expectOutputRegex('[Login Management]');
-        $this->expectOutputRegex('[Login]');
-        $this->expectOutputRegex('[Register]');
+        $this->expectOutputRegex('[Selamat Datang]');
+        // $this->expectOutputRegex('[Login]');
+        // $this->expectOutputRegex('[Register]');
     }
 
 }
