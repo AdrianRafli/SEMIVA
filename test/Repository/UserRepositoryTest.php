@@ -24,17 +24,16 @@ class UserRepositoryTest extends TestCase
     public function testSaveSuccess()
     {
         $user = new User();
-        $user->id = 
-        $user->email = "adrianrafly@gmail.com";
-        $user->username = "Adrian";
+        $user->id = "adrian";
+        $user->name = "Adrian";
         $user->password = "rahasia";
 
         $this->userRepository->save($user);
 
         $result = $this->userRepository->findById($user->id);
 
-        self::assertEquals($user->email, $result->email);
-        self::assertEquals($user->username, $result->username);
+        self::assertEquals($user->id, $result->id);
+        self::assertEquals($user->name, $result->name);
         self::assertEquals($user->password, $result->password);
     }
 
@@ -47,19 +46,19 @@ class UserRepositoryTest extends TestCase
     public function testUpdate()
     {
         $user = new User();
-        $user->email = "adrianrafly@gmail.com";
-        $user->username = "Adrian";
+        $user->id = "adrian";
+        $user->name = "Adrian";
         $user->password = "rahasia";
 
         $this->userRepository->save($user);
 
-        $user->username = "Budi";
+        $user->name = "Budi";
         $this->userRepository->update($user);
 
         $result = $this->userRepository->findById($user->id);
 
-        self::assertEquals($user->email, $result->email);
-        self::assertEquals($user->username, $result->username);
+        self::assertEquals($user->id, $result->id);
+        self::assertEquals($user->name, $result->name);
         self::assertEquals($user->password, $result->password);
     }
 

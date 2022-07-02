@@ -1,64 +1,17 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light px-5 pt-3">
-            <div class="container-fluid justify-content-between">
-              <a class="navbar-brand fw-bold" href="#">PERPUSTAKAAN</a>
-              <a href="users/login">
-                <button type="button" class="btn btn-primary">Login</button>
-                </a>
-            </div>
-        </nav>
-
-          <div class="hero bg-light">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
-                    <div>
-                        <h5>Selamat Datang Di</h5>
-                        <h1 class="fw-bold mb-2">Perpustakaan SNAPAN</h1>
-                        <p>Tempatnya Membaca dan Menambah Ilmu</p>
-                        <a href="login.php">
-                            <button type="button" class="btn btn-primary btn-sm mt-4">Lihat Buku</button>
-                        </a>
-                    </div>
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Selamat Datang</h1>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <div class="p-4 p-md-5 border rounded-3 bg-light">
+                <div class="form-floating mb-3">
+                    <a href="/users/register" class="w-100 btn btn-lg btn-primary">Register</a>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
-                    <img src="assets/svg/hero.svg" alt="Membaca Buku" class="hero-img">
+                <div class="form-floating mb-3">
+                    <a href="/users/login" class="w-100 btn btn-lg btn-primary">Login</a>
                 </div>
             </div>
         </div>
-
-        <div class="feature bg-light">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
-                    <img src="assets/svg/perpus.jpg" alt="Membaca Buku" class="feature-img">
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
-                    <div>
-                        <h2 class="fw-bold mb-3">Koleksi Perpustakaan</h2>
-                        <p class="fs-5">Perpustakaan SNAPAN memiliki koleksi buku yang lengkap <br> dalam berbagai bentuk (buku, buku digital, audiovisual, majalah, <br> koran, jurnal, jurnal elektronik)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="feature bg-light">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
-                    <div class="ms-5">
-                        <h2 class="fw-bold mb-3">Peminjaman Buku</h2>
-                        <p class="fs-5">Di Perpustakaan SNAPAN memiliki pelayanan pinjam buku kepada para pembaca</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <img src="assets/svg/pinjam.jpg" alt="Membaca Buku" class="feature-img ms-5">
-                </div>
-            </div>
-        </div>
-
-        <footer class="pt-3">
-            <div class="row">
-                <div class="col-12">
-                    <p class="fw-bold text-center">
-                        &copy; <script>document.write(new Date().getFullYear())</script> SMK N 8 Semarang
-                    </p>
-                </div>
-            </div>
-        </footer>
+    </div>
+</div>
